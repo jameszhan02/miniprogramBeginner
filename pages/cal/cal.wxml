@@ -1,0 +1,71 @@
+<!--
+轮播图 
+1. 轮播图外层容器 swiper
+2. 轮播项 swiper-item
+3. 轮播图存在默认样式。
+  - 100% width 
+  - height: 150 px
+  - swiper 高度无法用内容撑开
+4. 如何给swiper定高度？
+  - 原图的高度和宽度
+  - 等比例的给swiper定宽高。
+计算方法: 
+swiper width / swiper height = orgin width / orgin height
+-> swiper height = swiper width * orgin height / orgin width
+  -> (if 1125 * 352 is orgin )
+    -> height = calc(100vw * 352 / 1125)
+5. autoplay 自动轮播
+6. interval 修改轮播时间
+7. circular 衔接轮播
+-->
+<view class="container">
+  <swiper class="adBox" autoplay indicator-dots="true" indicator-color="rgba(251, 244, 177, 0.77)" indicator-active-color="rgba(255, 204, 36, 0.81)">
+    <swiper-item>
+      <image src="https://user-images.githubusercontent.com/45243472/86184434-36169600-bb02-11ea-87d7-4ef91e2e3894.png" />
+    </swiper-item>
+    <swiper-item> <image src="https://img.alicdn.com/tfs/TB1LPSiLHj1gK0jSZFuXXcrHpXa-750-235.jpg" /></swiper-item>
+    <swiper-item> <image src="//img.alicdn.com/tfs/TB17FpZLGL7gK0jSZFBXXXZZpXa-750-235.jpg_2200x2200Q75s50.jpg_.webp" /></swiper-item>
+  </swiper>
+  <!-- 长安文字复制属性 （只有text可以做到）
+对文本内容解码 decode 属性
+-->
+  <view class="title">
+    <text selectable="true"> Akiの憨批计算器 </text>
+  </view>
+  <!-- input bind with .js data variable -->
+  <view class="calArea">
+    <view class="leftPart">
+      <input class=" inputBox" type="number" value="{{numInput}}" bindinput="handleInput"></input>
+
+      <button class="oBtn" bindtap="handleClean">CLEAR</button>
+    </view>
+    <view class="rightPart">
+      <button class="calBtn" bindtap="handleBtnPlus">+</button>
+      <button class="calBtn" bindtap="handleBtnMinus">-</button>
+      <button class="calBtn" bindtap="handleBtnTime">x</button>
+      <button class="calBtn" bindtap="handleBtnDiv">/</button>
+    </view>
+  </view>
+  ---------------------
+  <view>
+    {{res}}
+  </view>
+</view>
+
+
+<!-- img 图片标签 
+属性: src 要加载的图片的路径。
+图片默认宽高 320X240 （px）
+mode属性决定图片如何图片标签的宽高作出适配。看文档选择合适的模式。
+-->
+<!-- <view class="img">
+<image src="https://user-images.githubusercontent.com/45243472/86184434-36169600-bb02-11ea-87d7-4ef91e2e3894.png"></image>
+</view> -->
+
+
+<!-- 
+  导航组件 navigator
+  属于块级元素，可以直接用样式来添加宽高。
+  url 跳转页面路径： 绝对/相对路径都可以。
+-->
+

@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/demo01/demo01",
+    "pages/cal/cal",
+    "pages/logs/logs",
+    "pages/docs/docs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#8CCAF4",
+    "navigationBarTitleText": "憨批测试",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#FFF26B"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "Home",
+      "iconPath": "icons/home.png",
+      "selectedIconPath": "icons/homeSelec.png"
+    },
+    {
+      "pagePath": "pages/docs/docs",
+      "text": "Docments",
+      "iconPath": "icons/doc.png",
+      "selectedIconPath": "icons/docSelec.png"
+    },
+    {
+      "pagePath": "pages/cal/cal",
+      "text": "憨批计算",
+      "iconPath": "icons/cal.png",
+      "selectedIconPath": "icons/calSelec.png"
+    }],
+    "color": "#6AB006"
+  },
+  "sitemapLocation": "sitemap.json"
+}

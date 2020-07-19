@@ -1,0 +1,91 @@
+<!--pages/docs/docs.wxml-->
+<!--  
+1. text 标签不会换行  = span in HTML
+2. view 会自动换行 = div 标签 in HTML
+-->
+<text>Page for practise</text>
+
+<!-- 
+1. 字符串
+msg 在.js 文件中为变量，暂时只是简单的字符串
+ -->
+<view> Message String Type: {{msg}} </view>
+<view> Number Type: {{num}} </view>
+<view> Boolean Type: {{isHuman}} </view>
+<!-- 
+处理 object 类型 . + feature
+ -->
+<view> Object Type: {{object01}} </view>
+<view> feature in Object01.name: {{object01.name}} </view>
+<view> feature in Object01.age: {{object01.age}}</view>
+<view> feature in Object01.height: {{object01.height}}</view>
+<view> feature in Object01.weight: {{object01.weight}}</view>
+
+<!-- 在标签属性中使用js变量 -->
+<view data-num="{{num}}"> 标签属性变量 </view>
+
+<!-- 使用bool类型充当属性 checked -->
+<view>
+  <checkbox checked="{{isChecked}}"></checkbox>
+</view>
+
+<!-- 运算 -->
+<view>{{1+1}}</view>
+<view>{{'1'+'1'}}</view>
+<view>{{10%2==0? '偶数' : '奇数'}}</view>
+
+<!-- 列表循环
+1. wx:for
+2. wx:key = "唯一值" 提高渲染性能
+   OR wx:key = "*this", 如果只是循环普通的数组
+   循环默认就是item 和index
+ -->
+<view>
+  <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+    Index: {{index}} -- Name: {{item.name}}
+  </view>
+</view>
+<view>
+  -- Object Loop --
+  <view wx:for="{{object01}}" wx:for-item="value" wx:for-index="key">
+    attuide: {{key}} -- Value: {{value}}
+  </view>
+</view>
+
+<!-- 
+--block 标签
+--占位符
+--相当于把循环的内容再以行内多写几遍。block 不会被渲染
+ -->
+<view>
+  <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+    Index: {{index}} -- Name: {{item.name}}
+  </block>
+</view>
+
+<!-- 
+ 条件渲染 vx:if "{{true/false}}"
+ 控制组件的show OR hidden
+-->
+<view>
+  <view>条件渲染</view>
+  <view wx:if="{{true}}">show</view>
+  <view wx:if="{{false}}">hidden</view>
+
+<!-- 正常的if条件筛选 -->
+  <view wx:if="{{true}}">1</view>
+  <view wx:elif="{{true}}">2</view>
+  <view wx:else>3</view>
+  
+</view>
+
+<!-- 
+ hidden 用法
+1. 直接加hidden ，会直接影藏标签。
+2. hidden = {{true}}
+
+** hidden 是通过添加样式来进行隐藏的，但是wx:if直接不渲染。**
+display attrubut will over write hidden 
+ -->
+
+<view hidden> hidden </view>

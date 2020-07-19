@@ -1,0 +1,82 @@
+/* 
+不需要特别引入样式文件。
+wxss中的特殊单位。
+rpx : 默认以宽度750px为标准。
+会自动根据实际的宽高作出对应的自适应调整。
+
+计算方法：
+100px = 750rpx * 100 / page( width px of page )
+
+引入代码 ： @import 相对路径only
+ */
+@import "../../styles/common.wxss";
+
+.adBox{
+  margin-top: 5rpx;
+}
+.inputBox {
+  width: 400rpx;
+  height: 90rpx;
+  border: 2px solid rgba(182, 190, 189, 0.753);
+  /* border-radius: 25px; */
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.oBtn {
+  width: 400rpx;
+  /* height: 100rpx; deisde by font size */
+  border: 3rpx solid rgba(182, 190, 189, 0.753);
+  float: left;
+  display: table;
+  font-size: 80%;
+}
+
+.oBtn text {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.title {
+  width: 100%;
+  height: 90rpx;
+  /* border: 1px solid rgba(182, 190, 189, 0.753); */
+  margin-top: 10rpx;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+text {
+  color: rgb(36, 104, 136);
+  font-size: 120%;
+}
+
+.calArea {
+  width: 100%;
+  display: flex;
+}
+
+.leftPart {
+  width: 70%;
+  margin-right: 15rpx;
+}
+
+.rightPart {
+  width: 22%;
+}
+
+.calBtn {
+  margin-top: 10rpx;
+  width: 100%;
+}
+
+.img {
+  width: 93%;
+  height: 370rpx;
+  margin: auto;
+}
+
+image {
+  height: 100%;
+  width: 100%;
+}
