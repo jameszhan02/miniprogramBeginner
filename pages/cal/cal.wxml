@@ -50,6 +50,10 @@ swiper width / swiper height = orgin width / orgin height
   <view>
     {{res}}
   </view>
+  <view class="linkBtn">
+  <!-- 直接设置navigator 跳转后左上角时代返回按钮的 -->
+    <navigator url="../logs/logs">小程序启动日志</navigator>
+  </view>
 </view>
 
 

@@ -80,3 +80,8 @@ image {
   height: 100%;
   width: 100%;
 }
+
+.linkBtn{
+  text-align: center;
+  border: 3rpx solid rgba(182, 190, 189, 0.753);
+}
